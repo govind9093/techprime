@@ -26,6 +26,6 @@ urlpatterns = [
     path('', views.Login, name='login'),
     path('dashboard/', views.Dashboard, name='dashboard'),
     path('create_project/', views.Create_Project, name='create_project'),
-    path('project_list/', views.Project_List, name='project_list'),
+    path('project_list/', views.Project_List, name='project_list'), 
 
 ]
