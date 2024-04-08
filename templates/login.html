@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        .container_first {
+            position: absolute;
+            top: 28%;
+            left: 32%;
+            width: 505px;
+            height: 447px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0px 30px rgba(0, 0, 0, 1);
+        }
+
+        .container {
+            max-width: 100%;
+
+        }
+
+        .header_img {
+            position: relative;
+            width: 100%;
+        }
+
+        .logo_img {
+            position: absolute;
+            left: 45%;
+            top: 40px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .col {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            float: left;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            box-sizing: border-box;
+        }
+
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .username,
+        .password {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            box-sizing: border-box;
+        }
+
+
+        .save_button {
+            width: 20%;
+            padding: 4px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: blue;
+            box-sizing: border-box;
+            color: #fff;
+        }
+
+        .header_name {
+            width: 18%;
+            position: absolute;
+            top: 133px;
+            right: 42%;
+            color: #fff;
+        }
+
+        .button {
+            border-radius: 50px;
+            color: white;
+            background-color: blue;
+            font-size: 20px;
+            width: 30%;
+        }
+    </style>
+</head>
+
+<body style="background: #e5e5e5;">
+
+    {% load static %}
+    <div class="container">
+        <img class="header_img" src="{%static 'login-bg-1.svg'%}">
+        <img class="logo_img" src="{%static 'Logo.svg'%}">
+        <h5 class="header_name">Online Project Management</h5>
+    </div>
+
+    <center>
+        <div class="container_first">
+            <form method='POST'>
+                {% csrf_token %}
+
+                <h4 style="margin-bottom: 60px;">Login to get started</h4>
+
+                <label for="username">Username </label>
+                <input class="username" type="text" id="username" name="username" required="required"><br><br>
+
+                <label for="password">Password</label>
+                <input class="password" type="password" id="password" name="password" required="required"><br><br>
+
+                <button class="btn button">Login</button>
+
+                <h5 style="margin-top: 60px;">Not Ragstered <a href="/signup">Sign Up</a></h5>
+            </form>
+        </div>
+    </center>
+</body>
+
+</html>
